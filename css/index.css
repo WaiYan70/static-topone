@@ -1,0 +1,1275 @@
+:root {
+  --red: #d01110;
+  --light-red: #e82f2f;
+  --celadon: #a8bbb0;
+  --light-celadon: #c6d2cb;
+  --lighter-celadon: #d4ddd8;
+  --background: #ebe8e0;
+  --blacktext: #0a0a00;
+  --whitetext: #ffffff;
+  --contentbackground: #d7d6d6;
+  /* #f3f3f3 grey color */
+  --grey: #f3f3f3;
+
+  /* font-size: 62.5%; */
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Navigation Bar */
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--whitetext);
+  color: var(--blacktext);
+  z-index: 10;
+  /* z-index to appear all over other div element */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-title {
+  letter-spacing: 0.25em;
+  padding: 1em 0.8em;
+  padding-right: calc(0.8em - 0.25em);
+  /* "letter-spacing" cause the element padding around */
+  /* border: 0.35em var(--red) solid; */
+}
+
+.navbar-title a {
+  font-size: 5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--red);
+}
+
+.navbar-title a:hover {
+  color: var(--light-red);
+}
+
+.navbar-links ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+
+.navbar-links ul li {
+  cursor: pointer;
+  list-style: none;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-links ul li:hover {
+  background-color: var(--background);
+  border-bottom: 3px solid var(--red);
+  transition-property: border-bottom;
+  transition-duration: 750ms;
+  transition-timing-function: ease-in-out;
+}
+
+.navbar-links ul li a {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--blacktext);
+  padding: 1em;
+}
+
+.navbar-links ul li a:hover,
+.navbar-link ul li a:focus {
+  color: var(--red);
+  /* background-color: var(--light-celadon); */
+  transition-duration: 750ms;
+}
+
+.navbar-links ul li a.currentPage {
+  color: var(--red);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/* Menu Bar Button */
+
+.menu_btn {
+  position: absolute;
+  top: 1.9em;
+  right: 1em;
+  display: none;
+  /* "flex" property to show the "menu button" */
+  flex-direction: column;
+  justify-content: center;
+  width: 4.2em;
+  height: 3.8em;
+  /* border: 2px solid var(--seaform); */
+  cursor: pointer;
+  /* transition: all 500ms ease-in-out; */
+  transition-property: transform, background;
+  transition-duration: 650ms;
+  transition-timing-function: ease-in-out;
+  /* background-color: var(--whitetext);
+    border-radius: 2px; */
+}
+
+.menu_btn_line {
+  width: 100%;
+  height: 0.6em;
+  background-color: var(--blacktext);
+  border-radius: 5px;
+  transition-property: transform, background;
+  transition-duration: 650ms;
+  transition-timing-function: ease-in-out;
+}
+
+.menu_btn_line::before,
+.menu_btn_line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.6em;
+  background-color: var(--blacktext);
+  border-radius: 5px;
+  transition-property: transform;
+  transition-duration: 650ms;
+  transition-timing-function: ease-in-out;
+}
+
+.menu_btn_line::before {
+  transform: translateY(-12.5px);
+}
+
+.menu_btn_line::after {
+  transform: translateY(12.5px);
+}
+
+.menu_btn.open .menu_btn_line {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu_btn.open .menu_btn_line::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu_btn.open .menu_btn_line::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Center the body */
+.center {
+  margin: 0px auto;
+  width: 70%;
+  /* border: 3px solid green; */
+}
+
+/* Main Slide Show / Image Slider */
+
+.main-image-container {
+  width: 100%;
+  height: 475px;
+  /* background-color: var(--red); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-image-wrapper,
+.main-image-slide {
+  position: relative;
+  /* it is important to be relative */
+  /* overflow: hidden; */
+  /* To appear the swiper-next-button, 
+    it doesn't need the overflow attribute */
+  width: 100%;
+  height: 100%;
+}
+
+/* .slide{
+    overflow: hidden;
+} */
+
+.main-image-slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.main-image-wrapper .main-image-slide .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-image-wrapper .main-image-slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.image-data span.text {
+  font-size: 3vw;
+  font-weight: 400;
+  color: var(--whitetext);
+}
+
+.image-data h2 {
+  font-size: 4.2vw;
+  font-weight: 600;
+  color: var(--whitetext);
+}
+
+.button {
+  font-size: 1.8rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.85em 2em;
+  color: var(--blacktext);
+  background-color: var(--whitetext);
+  border-radius: 2.5em;
+  text-decoration: none;
+  margin: 1em 0em 0em 0em;
+  transition-property: color, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.button:hover {
+  color: var(--red);
+  background-color: var(--celadon);
+}
+
+/* Swiper button css */
+.main-image-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.main-image-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.main-image-btn::before,
+.main-image-btn::after {
+  font-size: 3.8em;
+  color: var(--whitetext);
+}
+
+/* Auto Play Progress */
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--whitetext);
+  visibility: visible;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--whitetext);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+  visibility: visible;
+}
+
+/* The End of Main Slide Show / Image Slider*/
+
+/* Brand Products Slider/ Slide show */
+
+.main-slide-container {
+  /* height: 48vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--red); */
+}
+
+.main-slide-container .slide-container {
+  /* max-width: 1280px; */
+  width: 100%;
+  background-color: var(--background);
+  border-radius: 10px;
+  /* padding: 0px; */
+}
+
+.main-slide-container .slide-container .slide-name {
+  font-size: 3.5rem;
+  font-weight: 650;
+  color: var(--blacktext);
+  text-align: center;
+}
+
+.main-slide-container .slide-container .slide-content {
+  padding: 1.4em 2em 1.4em 2em;
+  margin: 0em 2em 1.4em 2em;
+  background-color: var(--background);
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card {
+  border-radius: 25px;
+  background-color: var(--celadon);
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .image-content,
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-self: normal; */
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .image-content {
+  position: relative;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .image-content .card-image {
+  position: relative;
+  /* width and height can be changed 255.33*/
+  width: 100%;
+  height: 100%;
+  border-radius: 25px 25px 0px 0px;
+  background-color: var(--celadon);
+  /* padding: 0.3em; */
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .image-content .card-image .card-img {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-name {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--whitetext);
+  margin-top: 0.2em;
+}
+
+ .main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-description {
+  font-size: 1.65rem;
+  color: var(--whitetext);
+  text-align: center;
+  margin: 1em 1em;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button {
+  border: none;
+  /* font-size: 1.75rem;
+  font-weight: 500; */
+  padding: 1em 1.2em;
+  margin: 0em 0em 1em 0em;
+  background-color: var(--whitetext);
+  border-radius: 55px;
+  cursor: pointer;
+  /* text-decoration: none; */
+  /* transition: background-color 1000ms ease-in-out; */
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button a{
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--blacktext);
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button a:hover{
+  color: var(--red);
+}
+
+.main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button:hover {
+  background-color: var(--lighter-celadon);
+}
+
+.main-slide-container .slide-container .brand-product-card-slider {
+  height: 43.4px;
+  width: 43.4px;
+  color: var(--blacktext);
+  /* background-color: var(--red); */
+  background-color: transparent;
+  border-radius: 50%;
+  transition: color 400ms ease-in-out;
+}
+
+.main-slide-container .slide-container .brand-product-card-slider:hover {
+  color: var(--whitetext);
+}
+
+.main-slide-container .slide-container .brand-product-card-slider::before,
+.main-slide-container .slide-container .brand-product-card-slider::after {
+  font-size: 3.5rem;
+}
+
+.main-slide-container .slide-container .swiper-button-next {
+  right: 0;
+}
+
+.main-slide-container .slide-container .swiper-button-prev {
+  left: 0;
+}
+
+/* Swiper Pagination  */
+.swiper-pagination-bullet {
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  background-color: var(--celadon);
+  visibility: visible;
+}
+
+.swiper-pagination-bullet-active {
+  border: 1.5px solid var(--celadon);
+  background-color: var(--whitetext);
+}
+
+/* The End of Brand Products Slider/ Slide show  */
+
+/* Best Seller Section */
+
+.best-seller-section h1{
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0.4em;
+}
+
+.best-seller-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  /* border: 1px solid black; */
+}
+
+.best-seller-box {
+  width: 500px;
+  margin: 1em 0em;
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  /* background-color: var(--blacktext); */
+  background-image: linear-gradient(
+    to left,
+    var(--whitetext),
+    var(--contentbackground)
+  );
+}
+
+.best-seller-box img {
+  width: 275px;
+  height: 275px;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+  float: left;
+}
+
+.best-seller-box .best-seller-header,
+.best-seller-box .best-seller-text {
+  /* width: 30%; */
+  width: 200px;
+  float: right;
+}
+
+.best-seller-box .best-seller-header {
+  font-size: 1.35rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0.3em 0em;
+  /* border: 1px solid black; */
+}
+
+/* .best-seller-box .best-seller-text {
+  margin: 1em 1em 1em 1em;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+  list-style: none;
+  border: 1px solid blue;
+} */
+
+.best-seller-box .best-seller-text {
+  display: blocks;
+  text-align: left; 
+}
+
+.best-seller-box .best-seller-text .best-seller-text-1 {
+  letter-spacing: 0.1em;
+  font-size: 1.75rem;
+  font-weight: 600;
+  vertical-align: top;
+  /* border: 1px solid black; */
+}
+
+.best-seller-box .best-seller-text .best-seller-text-2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  vertical-align: top;
+  /* border: 1px solid black; */
+}
+
+.best-seller-box .best-seller-text .best-seller-text-3 {
+  letter-spacing: 0.025rem;
+  font-size: 1.75rem;
+  font-weight: 400;
+  vertical-align: top;
+  /* border: 1px solid black; */
+}
+
+/* Continues to adjust the button position and size */
+.best-seller-box .best-seller-button {
+  font-size: 1.8rem;
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--whitetext);
+  text-decoration: none;
+  padding: 0.75em 0.85em;
+  margin: 0.85em 0em 0em 0em;
+  border-radius: 1.45em;
+  /* border: 1px solid black; */
+  /* margin attribute will adjust the button */
+}
+
+.best-seller-box .best-seller-button:hover {
+  background-color: var(--light-red);
+}
+/* The End of Best Seller Section */
+
+/* The Testimonial Section */
+
+.testimonial-session{
+  width: 100%;
+  /* height: 80vh;   */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--whitetext);
+  /* border: 1px solid var(--red); */
+}
+
+.testimonial{
+  position: relative;
+  /* max-width: 900px; */
+  width: 100%;
+  /* background-color: var(--whitetext); */
+  padding: 3em 0em;
+  overflow: hidden;
+  /* border: 1px solid blue; */
+}
+
+.testimonial .testimonial-header{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--red);
+}
+
+.testimonial .testimonial-container .testimonial-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 2em 0em;
+  /* border: 1px solid black; */
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-image{
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--red);
+}
+
+.testimonial .testimonial-container .testimonial-slide p{
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--blacktext);
+  padding: 0.75em 5em;
+  /* border: 1px solid black; */
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-quote{
+  font-size: 3rem;
+  color: var(--blacktext);
+  /* border: 1px solid black; */
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-detail .testimonial-name{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-detail .testimonial-title{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.testimonial .testimonial-container .testimonial-slide .testimonial-rating-star{
+  font-size: 2.5rem;
+  color: gold;
+}
+
+.testimonial .testimonial-next{
+  right: 0;
+}
+
+.testimonial .testimonial-prev{
+  left: 0;
+}
+
+.testimonial .testimonial-slider-button{
+  /* font-size: 43.4px; */
+  height: 43.4px;
+  width: 43.4px;
+  border-radius: 50%;
+  transform: translateY(10px);
+  color: var(--blacktext);
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background-color: transparent;
+}
+
+.testimonial .testimonial-slider-button::before,
+.testimonial .testimonial-slider-button::after{
+  font-size: 3.5rem;
+}
+
+.testimonial .swiper-pagination-testimonial{
+  color: var(--blacktext);
+}
+
+/* The End of Testimonial Section */
+
+/* The Footer */
+footer{
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  background-color: var(--whitetext);
+}
+
+.footer-container{
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-box{
+  flex-basis: 50%;
+  padding: 0.5em 2em;
+}
+
+.footer-container .footer-box h2{
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-box .footer-content{
+  position: relative;
+  margin: 1em 0em 0em 0em;
+  /* border: 1px solid var(--red); */
+}
+
+.footer-container .footer-box .footer-content::before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--light-celadon);
+}
+
+/* .footer-container .footer-box .footer-content::after{
+  position: absolute;
+  content: '';
+  top: -10px;
+  width: 25%;
+  height: 2px;
+  background-color: var(--blacktext);
+} */
+
+.footer-container .footer-box .footer-content p{
+  font-size: 2rem;
+  font-weight: 450;
+  margin: 0em 0em 0em 0em;
+  text-align: justify;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-left .footer-content .footer-social{
+  display: flex;
+  margin: 1em 0em 0em 0em;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-left .footer-content .footer-social a{
+  padding: 0em 2em;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-left .footer-content .footer-social a i{
+  font-size: 3rem;
+  width: 45px;
+  height: 45px;
+  color: var(--blacktext);
+  background: var(--whitetext);
+  line-height: 45px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition-property: background;
+  transition-duration: 1000ms;
+}
+
+.footer-container .footer-left .footer-content .footer-social a i:hover{
+  background-color: var(--red);
+}
+
+.footer-container .footer-center .footer-content td{
+  padding: 0.5em 0.5em;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-center .footer-content .footer-place i,
+.footer-container .footer-center .footer-content .footer-phone i,
+.footer-container .footer-center .footer-content .footer-email i{
+  font-size: 2.5rem;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: var(--blacktext);
+  background-color: var(--whitetext);
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-property: background;
+  transition-duration: 1000ms;
+}
+
+.footer-container .footer-center .footer-content .footer-place i:hover,
+.footer-container .footer-center .footer-content .footer-phone i:hover,
+.footer-container .footer-center .footer-content .footer-email i:hover{
+  background-color: var(--red);
+}
+
+.footer-container .footer-center .footer-content .footer-text{
+  font-size: 2rem;
+  font-weight: 450;
+  /* padding: 0em 0em 0em 0.5em; */
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-right .footer-content{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+
+.footer-container .footer-right .footer-content .footer-link{
+  display: block;
+  margin: 1.5em 0em;
+}
+
+.footer-container .footer-right .footer-content .footer-link a{
+  padding: 2em 2em 1.25em 1em;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
+.footer-container .footer-right .footer-content .footer-link i{
+  font-size: 2.2rem;
+  padding: 0em 0.25em 0em 0em;
+  color: var(--blacktext);
+}
+
+.footer-container .footer-right .footer-content .footer-link span{
+  font-size: 1.85rem;
+  font-weight: 450;
+  color: var(--blacktext);
+}
+
+footer .copy-right center{
+  font-size: 1.25rem;
+  padding: 1em 0em;
+}
+
+footer .copy-right center span{
+  color: var(--blacktext);
+}
+
+/* The End of Footer */
+
+/* The Media Query for footer */
+
+@media (max-width: 900px){
+  footer{
+    position: relative;
+  }
+
+  .footer-container{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+/* The End of the Media Query for Footer */
+
+/* Best Seller Media Queries For Standard Desktop Size (1440px)*/
+/* Standard Desktop Size */
+
+@media (max-width: 1440px) {
+  .best-seller {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 0.4em;
+  }
+
+  .best-seller-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .best-seller-box {
+    width: 700px;
+    margin: 1em 0em;
+    border: 2px solid var(--red);
+    border-radius: 20px;
+    background-image: linear-gradient(
+      to left,
+      var(--contentbackground),
+      var(--whitetext)
+    );
+  }
+
+  .best-seller-box img {
+    width: 450px;
+    height: 360px;
+    display: block;
+    object-fit: fill;
+    border-radius: 20px 0px 0px 20px;
+    float: left;
+  }
+
+  .best-seller-box .best-seller-header,
+  .best-seller-box .best-seller-text {
+    /* width: 30%; */
+    width: 220px;
+    float: right;
+  }
+
+  .best-seller-box .best-seller-header {
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0.55em 0em;
+    padding-left: 1em;
+  }
+
+  .best-seller-box .best-seller-text {
+    display: block;
+    margin: 1em 1em 1em 1em;
+    text-align: left;
+    list-style: none;
+  }
+
+  .best-seller-box .best-seller-text .best-seller-text-1 {
+    letter-spacing: 0.1em;
+    font-size: 1.75rem;
+    font-weight: 600;
+    vertical-align: top;
+    /* border: 1px solid black; */
+  }
+  
+  .best-seller-box .best-seller-text .best-seller-text-2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    vertical-align: top;
+    /* border: 1px solid black; */
+  }
+  
+  .best-seller-box .best-seller-text .best-seller-text-3 {
+    letter-spacing: 0.025em;
+    font-size: 1.75rem;
+    font-weight: 400;
+    vertical-align: top;
+    /* border: 1px solid black; */
+  }
+  
+  /* Continues to adjust the button position and size */
+  .best-seller-box .best-seller-button {
+    font-size: 2rem;
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--whitetext);
+    text-decoration: none;
+    padding: 0.75em 0.85em;
+    margin: 0.75em 0em 0.75em 0em;
+    border-radius: 1.45em;
+    /* border: 1px solid black; */
+    /* margin attribute will adjust the button */
+  }
+  
+   .best-seller-box .best-seller-button:hover {
+    background-color: var(--light-red);
+  }
+
+  /* Testimonial Section */
+  .testimonial .testimonial-container .testimonial-slide p{
+    padding: 0.75em 3em;
+  }
+  /* The End of Testimonial Section */
+
+}
+/* The End of Best Seller */
+
+/* Tablet Responsive */
+
+@media screen and (max-width: 1024px) {
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links.active {
+    overflow-y: auto;
+    /* transform: translateX(0%); */
+    display: flex;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 7.4em;
+    left: 0%;
+    display: none;
+    width: 100%;
+    /* height: 0%; */
+    /* background-image: linear-gradient(to top, var(--lighter-celadon), var(--light-celadon), var(--celadon));  */
+    background-color: var(--whitetext);
+    z-index: 3;
+    /* need to appear NavBar Link allover with position :fixed*/
+    opacity: 1;
+    overflow-y: hidden;
+    transition-property: overflow-y;
+    transition-duration: 5000ms;
+    transition-timing-function: linear;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links ul li {
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .navbar-links ul li:hover {
+    border-bottom: none;
+  }
+
+  .navbar-links ul li a {
+    padding: 1em;
+  }
+
+  .menu_btn {
+    display: flex;
+  }
+  .center {
+    margin: auto;
+    width: 80%;
+  }
+
+  /* Swiper Pagination Bullet and Button */
+
+  .nav-btn {
+    visibility: hidden;
+  }
+  .brand-product-card-slider {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+
+  /* Best Seller Section For Tablet Responsive */
+   .best-seller-container {
+    /* It needs to adjust the image for responsive in */
+    text-align: center;
+    width: 100%;
+  }
+
+  .best-seller-box {
+    width: 300px;
+    background-image: linear-gradient(
+      to bottom,
+      var(--whitetext),
+      var(--contentbackground)
+    );
+  }
+
+  .best-seller-box img {
+    /* it can be used max-width attribute 280 */
+    width: 100%;
+    height: 250px;
+    display: block;
+    object-fit: fill;
+    border-radius: 0px 0px 0px 0px;
+    /* padding: 0.5em; */
+    /* It control the image's size */
+  }
+
+  .best-seller-box .best-seller-header,
+  .best-seller-box .best-seller-text {
+    width: 100%;
+  }
+
+  .best-seller-box .best-seller-header{
+    text-align: center;
+    padding-left: 0em;
+  }
+
+  .best-seller-box .best-seller-text {
+    display: none;
+  }
+
+  /* Continues to adjust the button position and size */
+  .best-seller-box .best-seller-button {
+    font-size: 2rem;
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--whitetext);
+    text-decoration: none;
+    padding: 0.75em 0.85em;
+    margin: 0.5em 0em 0.5em 0em;
+    border-radius: 1.45em;
+    /* border: 1px solid black; */
+    /* margin attribute will adjust the button */
+  }
+  
+  .best-seller-box .best-seller-button:hover {
+    background-color: var(--light-red);
+  }
+  /* The End of Best Seller Section For Tablet Responsive */
+
+  /* Testimonial Section For Tablet Responsive*/
+  .testimonial .testimonial-container .testimonial-slide p{
+    padding: 0.75em 3em;
+  }
+  /* The End of Testimonial Section For Tablet Responsive*/
+}
+
+/* Mobile Responsive */
+@media (max-width: 440px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links.active {
+    overflow-y: auto;
+    /* transform: translateX(0%); */
+    display: flex;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 7.4em;
+    left: 0%;
+    display: none;
+    width: 100%;
+    /* height: 0%; */
+    /* background-image: linear-gradient(to top, var(--lighter-celadon), var(--light-celadon), var(--celadon));  */
+    background-color: var(--whitetext);
+    z-index: 3;
+    /* need to appear NavBar Link allover with position :fixed*/
+    opacity: 1;
+    overflow-y: hidden;
+    transition-property: overflow-y;
+    transition-duration: 5000ms;
+    transition-timing-function: linear;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links ul li {
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .navbar-links ul li:hover {
+    border-bottom: none;
+  }
+
+  .navbar-links ul li a {
+    padding: 1em;
+  }
+
+  .menu_btn {
+    display: flex;
+  }
+  .center {
+    margin: auto;
+    width: 90%;
+  }
+
+  /* Swiper Pagination  Bullet and Button*/
+
+  .nav-btn {
+    visibility: hidden;
+  }
+  .brand-product-card-slider {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+
+  /* Best Seller Section For Mobile Responsive */
+
+  .best-seller-container {
+    /* It needs to adjust the image for responsive in */
+    text-align: center;
+    width: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .best-seller-box {
+    width: 300px;
+    background-image: linear-gradient(
+      to bottom,
+      var(--whitetext),
+      var(--contentbackground)
+    );
+  }
+
+  .best-seller-box img {
+    /* it can be used max-width attribute 280 */
+    width: 100%;
+    height: 250px;
+    display: block;
+    object-fit: fill;
+    border-radius: 0px 0px 0px 0px;
+    /* padding: 0.5em; */
+    /* It control the image's size */
+  }
+
+  .best-seller-box .best-seller-header,
+  .best-seller-box .best-seller-text {
+    width: 100%;
+  }
+
+  .best-seller-box .best-seller-header{
+    text-align: center;
+    padding-left: 0em;
+  }
+
+  .best-seller-box .best-seller-text {
+    display: none;
+  }
+
+  /* Continues to adjust the button position and size */
+  .best-seller-box .best-seller-button {
+    font-size: 2rem;
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--whitetext);
+    text-decoration: none;
+    padding: 0.75em 0.85em;
+    margin: 0.5em 0em 0.5em 0em;
+    border-radius: 1.45em;
+    /* border: 1px solid black; */
+    /* margin attribute will adjust the button */
+  }
+  
+  .best-seller-box .best-seller-button:hover {
+    background-color: var(--light-red);
+  }
+
+  /* Testimonial Section For Mobile Responsive*/
+  .testimonial .testimonial-container .testimonial-slide p{
+    padding: 0.75em 1.5em;
+  }
+  /* The End of Testimonial Section For Mobile Responsive*/
+}
