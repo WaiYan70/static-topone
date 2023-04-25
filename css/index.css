@@ -418,6 +418,7 @@ body {
 .main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button a{
   font-size: 1.75rem;
   font-weight: 500;
+  padding: 0.9em;
   color: var(--blacktext);
   text-decoration: none;
   transition-property: color;
@@ -1131,7 +1132,7 @@ footer .copy-right center span{
 
   /* Testimonial Section For Tablet Responsive*/
   .testimonial .testimonial-container .testimonial-slide p{
-    padding: 0.75em 3em;
+    padding: 0.75em 1.5em;
   }
   /* The End of Testimonial Section For Tablet Responsive*/
 }
