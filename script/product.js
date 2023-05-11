@@ -44,9 +44,6 @@ tabsButton.forEach((tabButton, index) => {
             tab.classList.remove('active')
         });
         tabButton.classList.add('active');
-        // var line = document.querySelector('.tab-line');
-        // line.style.width = e.target.offsetWidth + "px";
-        // line.style.left = e.target.offsetLeft + "px";
         content.forEach(content=>{
             content.classList.remove('active')
         });
