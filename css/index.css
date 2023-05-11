@@ -31,9 +31,9 @@ body {
 
 @font-face {
   font-family: "Bazooka"; 
-  src:  url("/BazookaRegular/BazookaRegular.woff2") format("woff2"),
-        url("/BazookaRegular/BazookaRegular.woff") format("woff"), 
-        url("/BazookaRegular/BazookaRegular.ttf") format("truetype");
+  src:  url("BazookaRegular.woff2") format("woff2"),
+        url("BazookaRegular.woff") format("woff"), 
+        url("BazookaRegular.ttf") format("truetype");
 }
 
 /* @font-face {
