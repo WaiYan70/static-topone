@@ -27,28 +27,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* https://www.onlinewebfonts.com/download/cd5bc415c2e4ee3b50e7b8a5053c75d9 */
-
-@font-face {
-  font-family: "Bazooka"; 
-  src:  url("BazookaRegular.woff2") format("woff2"),
-        url("BazookaRegular.woff") format("woff"), 
-        url("BazookaRegular.ttf") format("truetype");
-}
-
-/* @font-face {
-  font-family: "Bazooka"; 
-  src:  url("//db.onlinewebfonts.com/t/cd5bc415c2e4ee3b50e7b8a5053c75d9.eot"); 
-  src:  url("//db.onlinewebfonts.com/t/cd5bc415c2e4ee3b50e7b8a5053c75d9.eot?#iefix") format("embedded-opentype"), 
-        url("//db.onlinewebfonts.com/t/cd5bc415c2e4ee3b50e7b8a5053c75d9.woff2") format("woff2"), 
-        url("//db.onlinewebfonts.com/t/cd5bc415c2e4ee3b50e7b8a5053c75d9.woff") format("woff"), 
-        url("//db.onlinewebfonts.com/t/cd5bc415c2e4ee3b50e7b8a5053c75d9.ttf") format("truetype")
-} */
-
 /* Navigation Bar */
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -59,25 +43,9 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-.navbar-title {
-  letter-spacing: 0.25em;
-  padding: 1em 0.8em;
-  padding-right: calc(0.8em - 0.25em);
-  /* "letter-spacing" cause the element padding around */
-  /* border: 0.35em var(--red) solid; */
-}
-
-.navbar-title a {
-  font-family: "Bazooka";
-  font-size: 5rem;
-  font-weight: 600;
-  text-decoration: none;
-  /* color: var(--red); */
-  color: #ff0000;
-}
-
-.navbar-title a:hover {
-  color: var(--light-red);
+.navbar-title img{
+  width: 200px;
+  height: 75px;
 }
 
 .navbar-links ul {
@@ -426,9 +394,9 @@ body {
 }
 
 .main-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
-  color: var(--whitetext);
+  color: var(--blacktext);
   margin-top: 0.2em;
 }
 

@@ -1,16 +1,16 @@
 // for sticky navigation bar 
-window.onscroll = function(){myFunction()};
+// window.onscroll = function(){myFunction()};
 
-const navbar = document.getElementsByClassName('navbar')[0];
-const sticky = navbar.offsetTop;
+// const navbar = document.getElementsByClassName('navbar')[0];
+// const sticky = navbar.offsetTop;
 
-function myFunction(){
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add('sticky');
-    }else{
-        navbar.classList.remove('sticky');
-    }
-}
+// function myFunction(){
+//     if (window.pageYOffset >= sticky) {
+//         navbar.classList.add('sticky');
+//     }else{
+//         navbar.classList.remove('sticky');
+//     }
+// }
 
 // for Menubar (HamBurger Stack)
 const menuButton = document.getElementsByClassName('menu_btn')[0];
@@ -58,7 +58,7 @@ var swiper = new Swiper(".mySwiper", {
     grabCursor: true,
     autoplay: {
       delay: 3000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     pagination: {
       el: ".swiper-pagination",
