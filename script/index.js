@@ -1,35 +1,52 @@
-// for sticky navigation bar 
-// window.onscroll = function(){myFunction()};
+const menuButton = (toggleId, navbarMenu, menuOverlay,dropdown, navbardropdown) =>{
+  const toggle = document.getElementById(toggleId);
+  const navbar = document.getElementById(navbarMenu);
+  const menuoverlay = document.getElementById(menuOverlay);
 
-// const navbar = document.getElementsByClassName('navbar')[0];
-// const sticky = navbar.offsetTop;
+  const navbarLinkDropdown = document.getElementById(navbardropdown);
+  const dropDown = document.getElementsByClassName(dropdown)[0];
+  let dropDownOpen = false;
 
-// function myFunction(){
-//     if (window.pageYOffset >= sticky) {
-//         navbar.classList.add('sticky');
-//     }else{
-//         navbar.classList.remove('sticky');
-//     }
-// }
+  toggle.addEventListener('click', () =>{
+      // Add show-menu class to navbar menu
+      navbar.classList.toggle('show-menu');
+      navbar.classList.toggle('active');
+      // Add show-icon to show and hide the menu icon
+      toggle.classList.toggle('show-icon');
+      menuoverlay.classList.toggle('active');
+      
+      if(toggle.classList.toggle('.navbar-menu-btn-open')) {
+          dropDown.classList.remove('active');
+          dropDownOpen = false;
+          // console.log("toggle : " + dropDownOpen);
+      }
+  });
+  menuoverlay.addEventListener('click', () => {
+      navbar.classList.remove('show-menu');
+      navbar.classList.remove('active');
+      toggle.classList.remove('show-icon');
+      menuoverlay.classList.remove('active');
 
-// for Menubar (HamBurger Stack)
-const menuButton = document.getElementsByClassName('menu_btn')[0];
-const navbarLinks = document.getElementsByClassName('navbar-links')[0];
-
-let menuOpen = false;
-
-menuButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active');
-    if (!menuOpen) {
-        menuButton.classList.add('open');
-        menuOpen = true;
-        // navbarLinks.style.height = "41.65%";
-    } else {
-        menuButton.classList.remove('open');
-        menuOpen = false
-        // navbarLinks.style.height = "0%";
-    }
-});
+      if(dropDown.classList.contains('active')){
+          dropDown.classList.remove('active');
+          dropDownOpen = false;
+          // console.log("menuoverlay : " + dropDownOpen);
+      }
+  });
+  navbarLinkDropdown.addEventListener('click', (event) => {
+      event.preventDefault();
+      if(!dropDownOpen){
+          dropDown.classList.toggle('active');
+          dropDownOpen = true;
+          // console.log("dropdown : " + dropDownOpen);
+      } else {
+          dropDown.classList.remove('active');
+          dropDownOpen = false;
+          // console.log("dropdown : " + dropDownOpen);
+      }
+  });
+};
+menuButton('navbar-toggle','navbar-menu','menu-overlay','dropdown','navbar-link-dropdown');
 
 // Swiper for Image Slider with Infinity Loop 
 
@@ -47,6 +64,26 @@ menuButton.addEventListener('click', () => {
 //     },
 //   });
 
+// Swiper for Image Hero Section
+var swiper = new Swiper(".image-hero-swiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination-hero",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+// The End of Swiper for Image Hero Section
+
 // Swiper for Image Slider with Auto Play Progress
 // Main Slide Image (advertisement)
 const progressCircle = document.querySelector(".autoplay-progress svg");
@@ -57,7 +94,7 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     grabCursor: true,
     autoplay: {
-      delay: 3000,
+      delay: 2000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -103,11 +140,14 @@ var swiper = new Swiper(".slide-content", {
     0: {
       slidesPerView: 1,
     }, 
-    690: {
+    660: {
       slidesPerView: 2,
     }, 
-    1080: {
+    1120: {
       slidesPerView: 3,
+    },
+    1440: {
+      slidesPerView: 4,
     }
   }
 });

@@ -21,30 +21,69 @@
     <script src="script/contact.js" defer></script>
   </head>
   <body>
-    <!-- it can use <nav> tag attribute instead of <div> attribute but <nav> has different version to support browser -->
-    <div class="navbar">
-      <div class="navbar-title">
-        <!-- <a href="index.html">Top One</a> -->
-        <a href="index.html">
-          <img src="Top-One-Logo-50.webp" alt="Top-One-LoGo">
-        </a>
-      </div>
-      <div class="menu_btn">
-        <div class="menu_btn_line"></div>
-      </div>
-      <div class="navbar-links">
-        <div id="marker"></div>
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./product.html">Product</a></li>
-          <li><a href="./download.html">Download</a></li>
-          <li><a href="./contact.html" class="currentPage">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <br />
+    <!-- Primary Navigation Bar -->
+    <header class="primary-navbar-header">
+      <nav class="navbar container">
+          <!-- NavaBar Data -->
+          <div class="navbar-data">
+              <!-- <a href="#" class="navbar-logo">
+                  TopOne
+              </a> -->
+              <a href="#" class="navbar-logo">
+                  <img src="Top-One-Logo-50.webp" alt="">
+              </a>
+              <div class="navbar-toggle" id="navbar-toggle">
+                  <i class="fa-solid fa-bars navbar-menu-btn-open" id="navbar-toggle"></i>
+                  <i class="fa-solid fa-xmark navbar-menu-btn-close" id="navbar-toggle"></i>
+              </div>
+          </div>
+          <!--The End of NavaBar Data -->
+
+          <!-- Menu-Overlay -->
+          <div class="menu-overlay" id="menu-overlay"></div>
+          <!-- The End of Menu-Overlay -->
+
+          <!-- Nav Menu -->
+          <div class="navbar-menu" id="navbar-menu">
+              <ul class="navbar-list">
+                  <li>
+                      <a href="index.html" class="navbar-link">Home</a>
+                  </li>
+                  <li class="dropdown">
+                      <a href="product.html" class="navbar-link" id="navbar-link-dropdown">
+                          Product<i class="fa-solid fa-angle-down dropdown-arrow"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="product.html" class="dropdown-menu-item">
+                                  <i class="fa-solid fa-print"></i>Split<span>Printer</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="product.html" class="dropdown-menu-item">
+                                  <i class="fa-solid fa-barcode"></i>Wireless<span>Scanner</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="product.html" class="dropdown-menu-item">
+                                  <i class="fa-solid fa-cash-register"></i>Cash<span>Drawer</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="download.html" class="navbar-link">Download</a>
+                  </li>
+                  <li>
+                      <a href="contact.html" class="navbar-link currentPage">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- The End of Nav Menu -->
+      </nav>
+    </header>
+    <!-- The End of Primery Navigation Bar -->
     <div class="center">
-      <br />
 
       <!-- The Contact Form -->
       <section class="contact-container">
@@ -84,7 +123,7 @@
                 </div>
                 <div class="contact-form-infomation">
                   <i class="fa-solid fa-envelope"></i>
-                  <p>thanksinoo.2011@gmail.com</p>
+                  <p>quickmart28@gmail.com</p>
                 </div>
               </div>
               <!-- The End of Contact Form Info Detail -->
@@ -104,7 +143,7 @@
           <!-- The End of Contact Form Info -->
 
           <!-- The Contact Form Letter -->
-          <div class="contact-form-letter">
+          <!-- <div class="contact-form-letter">
             <form action="contact.html" autocomplete="off">
               <h3 class="contact-form-title">Contact us</h3>
               <div class="input-container">
@@ -129,7 +168,7 @@
               </div>
               <input type="submit" value="Send" class="contact-form-btn" />
             </form>
-          </div>
+          </div> -->
           <!-- The End of Contact Form Letter -->
         </div>
       </section>
@@ -201,7 +240,7 @@
             <tr class="footer-email">
               <td><i class="fa-solid fa-envelope"></i></td>
               <td>
-                <span class="footer-text">thanksinoo.2011@gmail.com</span>
+                <span class="footer-text">quickmart28@gmail.com</span>
               </td>
             </tr>
           </table>
