@@ -48,63 +48,27 @@ const menuButton = (toggleId, navbarMenu, menuOverlay,dropdown, navbardropdown) 
 };
 menuButton('navbar-toggle','navbar-menu','menu-overlay','dropdown','navbar-link-dropdown');
 
-// Swiper for Image Slider with Infinity Loop 
-
-// var swiper = new Swiper(".mySwiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-//     loop: true,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//   });
-
-// Swiper for Image Hero Section
-var swiper = new Swiper(".image-hero-swiper", {
-  spaceBetween: 30,
-  centeredSlides: true,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination-hero",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-// The End of Swiper for Image Hero Section
-
 // Swiper for Image Slider with Auto Play Progress
 // Main Slide Image (advertisement)
 const progressCircle = document.querySelector(".autoplay-progress svg");
 const progressContent = document.querySelector(".autoplay-progress span");
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".main-image-container-swiper", {
     spaceBetween: 30,
     loop: true,
     centeredSlides: true,
     grabCursor: true,
     autoplay: {
-      delay: 2000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".swiper-pagination-main",
       clickable: true,
       // dynamicBullets: true,
     },
     navigation: {
       nextEl: ".main-image-next",
-      prevEl: ".main-image-prev"
+      prevEl: ".main-image-prev",
     },
     on: {
       autoplayTimeLeft(s, time, progress) {
@@ -114,43 +78,60 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
+// 400px x 736px is iphone 7+ size
+// 375px x 667px is iphone SE size
+
 // Swiper for card slider with infinite loop
 // Brand Products
+
 var swiper = new Swiper(".slide-content", {
-  slidesPerView: 3,
-  spaceBetween: 35,
-  // slidesPerGroup: 3,
   loop: true,
-  centerSlide:'true',
-  fade: 'true',
-  // loopFillGroupWithBlank: true,
-  gragCursor: 'true',
+  grabCursor: true,
   pagination: {
     el: ".swiper-pagination-card",
     clickable: true,
+    disableOnInteraction: false,
     dynamicBullets: true,
   },
   navigation: {
     nextEl: ".brand-product-card-next",
     prevEl: ".brand-product-card-prev",
   },
-  // 400px x 736px is iphone 7+ size
-  // 375px x 667px is iphone SE size
+  // breakpoints: {
+  //   0: {
+  //     slidesPerView: 1,
+  //     spaceBetween: 25,
+  //   },
+  //   580: {
+  //     slidesPerView: 2,
+  //     spaceBetween: 25,
+  //   },
+  //   1024: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 35,
+  //   },
+  //   1440: {
+  //     slidesPerView: 4,
+  //     spaceBetween: 45,
+  //   },
+  // },
+
   breakpoints: {
     0: {
       slidesPerView: 1,
-    }, 
-    660: {
-      slidesPerView: 2,
-    }, 
-    1120: {
-      slidesPerView: 3,
+      spaceBetween: 25,
     },
-    1440: {
-      slidesPerView: 4,
-    }
-  }
+    580: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 60,
+    },
+  },
 });
+// The End of Brand Products
 
 // Testimonial Section
 

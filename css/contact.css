@@ -43,7 +43,7 @@ html{
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--body-color);
   font-family: "Roboto", sans-serif;
 }
 
@@ -112,8 +112,7 @@ a{
   height: 5.5em;
 }
 .primary-navbar-header .container{
-    /* max-width: 1120px; */
-  margin-inline: 12.5%;
+  margin-inline: 12%;
 }
 .primary-navbar-header .navbar > .navbar-data{
   height: 100%;
@@ -344,7 +343,7 @@ a{
     left: 0;
     top: 9em;
     opacity: 0;
-    /* pointer-events: none; */
+    pointer-events: none;
     transition: opacity 300ms, top 300ms;
   }
   .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown:hover > .dropdown-menu{
@@ -370,101 +369,9 @@ a{
 .center {
   margin: 0em auto;
   padding-top: 8em;
-  width: 75%;
+  width: 40%;
   /* border: 1px solid var(--light-red); */
 }
-
-/* Tab Session */
-/* tab-container, tab-box, tab, tab-line, content-box, content */
-.tab-container {
-  /* width: 600px; */
-  background-color: var(--whitetext);
-  padding: 30px;
-  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.35);
-  border-radius: 20px;
-  border: 1px solid black;
-}
-
-.tab-box {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* Continous on this Feature and Components */
-  border-bottom: 2px solid rgba(229, 229, 229);
-  /* border-bottom: 2px solid red; */
-  /* border: 2px solid var(--red); */
-}
-
-.tab-box .tab {
-  position: relative;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--light-grey);
-  background: none;
-  /* border: 1px solid black; */
-  border: none;
-  padding: 1em 0.5em;
-  cursor: pointer;
-}
-
-.tab-box .tab.active {
-  color: var(--red);
-}
-
-/* To Adjust The Text Hover */
-/* .tab-box .tab:hover{
-  color: var(--red);
-} */
-
-.tab::after {
-  content: "";
-  position: absolute;
-  background-color: var(--red);
-  height: 3px;
-  width: 0%;
-  left: 0px;
-  bottom: 0px;
-  transition-duration: 500ms;
-}
-
-/* To Adjust The Underline Hover */
-.tab.active::after {
-  width: 100%;
-}
-
-.tab:hover::after {
-  width: 100%;
-}
-
-.content-box {
-  padding: 20px;
-}
-
-.content-box .content {
-  display: none;
-  animation: moving 500ms ease-in-out;
-}
-
-@keyframes moving {
-  from {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-
-.content-box .content.active {
-  display: block;
-}
-
-.content-box .content h2 {
-  margin-bottom: 1em;
-}
-/* The End of Tab Session */
 
 /* ------------------------------------------------------------------- */
 /* The Contact Form */
@@ -512,7 +419,7 @@ textarea{
 .contact-form-info{
   background-color: var(--whitetext);
   /* border: 1px solid blue; */
-  /* text-align: center; */
+  text-align: center;
 }
 
 .contact-form-info-container{
@@ -535,6 +442,7 @@ textarea{
 
 .contact-form-info .contact-form-info-container .contact-form-info-detail .contact-form-infomation{
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1em 0em;
   /* margin: 1em 0em; */
@@ -562,6 +470,7 @@ textarea{
 
 .contact-form-info .contact-form-info-container .contact-form-social-media .contact-form-social-icon{
   display: flex;
+  justify-content: center;
   margin-top: 1em;
 }
 
