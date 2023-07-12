@@ -607,7 +607,7 @@ footer{
 
 .footer-container .footer-box{
   flex-basis: 50%;
-  padding: 0.5em 2em;
+  padding: 1.25rem 2rem;
 }
 
 .footer-container .footer-box h2{
@@ -618,7 +618,7 @@ footer{
 
 .footer-container .footer-box .footer-content{
   position: relative;
-  margin: 1em 0em 0em 0em;
+  margin-top: 1rem;
 }
 
 .footer-container .footer-box .footer-content::before{
@@ -646,7 +646,7 @@ footer{
 .footer-container .footer-left .footer-content .footer-social  .footer-social-link{
   display: flex;  
   align-items: center;
-  margin: 1em;
+  margin: 1rem;
 }
 
 .footer-container .footer-left .footer-content .footer-social .footer-social-link a{
@@ -675,13 +675,13 @@ footer{
 
 .footer-container .footer-left .footer-content .footer-social .footer-social-link a span{
   font-size: 1.8rem;
-  padding-left: 0.5em;
+  padding-left: 0.5rem;
 }
 /* The End of footer left */
 
 /* footer center */
 .footer-container .footer-center .footer-content td{
-  padding: 0.5em 0.5em;
+  padding: 0.5rem 0.5rem;
 }
 
 .footer-container .footer-center .footer-content .footer-place i,
@@ -731,12 +731,12 @@ footer{
 .footer-container .footer-right .footer-content .footer-link,
 .footer-container .footer-right .footer-content-1 .footer-link{
   display: block;
-  margin: 1.5em 1em 2.5em 1em;
+  margin: 1.5rem 1rem 2.5rem 1rem;
 }
 
 .footer-container .footer-right .footer-content .footer-link a,
 .footer-container .footer-right .footer-content-1 .footer-link a{
-  padding: 1.8em 1.8em 1.2em 1em;
+  padding: 1.8rem 1.8rem 1.2rem 1rem;
   text-decoration: none;
   border: 2px solid var(--blacktext);
   border-radius: 50px;
@@ -744,25 +744,23 @@ footer{
 
 .footer-container .footer-right .footer-content .footer-link i,
 .footer-container .footer-right .footer-content-1 .footer-link i{
-  font-size: 2.2em;
-  padding: 0em 0.25em 0em 0.25em;
+  font-size: 2rem;
+  padding: 0rem 0.35rem;
   color: var(--blacktext);
 }
 
 .footer-container .footer-right .footer-content .footer-link span,
 .footer-container .footer-right .footer-content-1 .footer-link span{
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 400;
   color: var(--blacktext);
 }
 /* The End of footer right */
 
-/* footer content - 1 */
 /* The End of Footer Content - 1 */
 
 footer .copy-right center{
   font-size: 1.25rem;
-  padding: 1em 0em;
 }
 
 footer .copy-right center span{
@@ -772,8 +770,7 @@ footer .copy-right center span{
 /* The End of footer */
 
 /* Media Query for footer */
-
-@media (max-width: 900px){
+@media screen and (max-width: 900px){
   footer{
     position: relative;
   }
@@ -781,17 +778,19 @@ footer .copy-right center span{
     flex-wrap: wrap;
     flex-direction: column;
   }
+  .footer-container .footer-right .footer-content .footer-link span,
+  .footer-container .footer-right .footer-content-1 .footer-link span{
+    font-size: 1.5rem;
+  }
 }
 /* @media (max-width: 1300px) */
-@media (900px < width < 1300px){
-  .footer-container .footer-right .footer-content{
-    flex-direction: column;
-  }
+@media screen and (900px < width < 1300px){
+  .footer-container .footer-right .footer-content,
   .footer-container .footer-right .footer-content-1{
     flex-direction: column;
   }
 }
-/* The End of The Media Query for footer */
+/* The End of the Media Query for Footer */
 
 /*
  Media Queries 

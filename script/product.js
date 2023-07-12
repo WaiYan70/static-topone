@@ -48,25 +48,45 @@ const menuButton = (toggleId, navbarMenu, menuOverlay,dropdown, navbardropdown) 
 };
 menuButton('navbar-toggle','navbar-menu','menu-overlay','dropdown','navbar-link-dropdown');
 
-// For Tab Session
-const tabsButton = document.querySelectorAll('.tab');
-const content = document.querySelectorAll('.content');
+// Modal Box 
+const openModalButton = document.querySelectorAll('[data-modal-target]');
+const closeModalButton = document.querySelectorAll('[data-close-button]');
+const modalOverLay = document.getElementById('modal-overlay');
 
-// const tabsButton = document.getElementsByClassName('tab-button')[0];
-// const content    = document.getElementsByClassName('content')[0];
-
-tabsButton.forEach((tabButton, index) => {
-    tabButton.addEventListener('click', (e) => {
-        tabsButton.forEach(tab => {
-            tab.classList.remove('active')
-        });
-        tabButton.classList.add('active');
-        content.forEach(content=>{
-            content.classList.remove('active')
-        });
-        content[index].classList.add('active');
-    })
+openModalButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    });
 });
+
+// Model Overlay
+modalOverLay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach(modal => {
+        closeModal(modal);
+    });
+});
+
+closeModalButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+function openModal(modal){
+    if (modal == null) return
+    modal.classList.add('active')
+    modalOverLay.classList.add('active')
+}
+
+function closeModal(modal){
+    if (modal == null) return
+    modal.classList.remove('active')
+    modalOverLay.classList.remove('active')
+}
+// The End of Modal Box
 
 // Product Card
 

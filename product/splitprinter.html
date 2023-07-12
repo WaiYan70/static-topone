@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top One</title>
+    <title>Top One - Product Page - Slip Printer</title>
+    <meta name="description" content="Top One တံဆိတ် ၏ Slip Printer အသေးစိတ်အချက်အလက်များ၊စျေးနုန်းများနှင့်ဓါတ်ပုံများကိုဝင်ရောက်ကြည့်ရှူနိုင်ပါသည်။">
 
     <!-- Google Fonts Links "Roboto" -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,10 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="fontawesome-6.2.0/css/all.css" />
-    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="../fontawesome-6.2.0/css/all.css" />
+    <link rel="stylesheet" href="../css/product.css" />
 
-    <script src="script/product.js" defer></script>
+    <script src="../script/product.js" defer></script>
   </head>
   <body>
     <!-- it can use <nav> tag attribute instead of <div> attribute but <nav> has different version to support browser -->
@@ -29,7 +30,7 @@
                   TopOne
               </a> -->
               <a href="#" class="navbar-logo">
-                  <img src="Top-One-Logo-50.webp" alt="">
+                  <img src="../Top-One-Logo-50.webp" alt="">
               </a>
               <div class="navbar-toggle" id="navbar-toggle">
                   <i class="fa-solid fa-bars navbar-menu-btn-open" id="navbar-toggle"></i>
@@ -46,35 +47,35 @@
           <div class="navbar-menu" id="navbar-menu">
               <ul class="navbar-list">
                   <li>
-                      <a href="index.html" class="navbar-link">Home</a>
+                      <a href="../index.html" class="navbar-link">Home</a>
                   </li>
                   <li class="dropdown">
-                      <a href="product.html" class="navbar-link currentPage" id="navbar-link-dropdown">
+                      <a href="#" class="navbar-link currentPage" id="navbar-link-dropdown">
                           Product<i class="fa-solid fa-angle-down dropdown-arrow"></i>
                       </a>
                       <ul class="dropdown-menu">
                           <li>
-                              <a href="product.html" class="dropdown-menu-item currentPage">
+                              <a href="splitprinter.html" class="dropdown-menu-item currentPage">
                                   <i class="fa-solid fa-print"></i>Slip<span>Printer</span>
                               </a>
                           </li>
                           <li>
-                              <a href="product.html" class="dropdown-menu-item">
+                              <a href="scanner.html" class="dropdown-menu-item">
                                   <i class="fa-solid fa-barcode"></i>Wireless<span>Scanner</span>
                               </a>
                           </li>
                           <li>
-                              <a href="product.html" class="dropdown-menu-item">
+                              <a href="cashdrawer.html" class="dropdown-menu-item">
                                   <i class="fa-solid fa-cash-register"></i>Cash<span>Drawer</span>
                               </a>
                           </li>
                       </ul>
                   </li>
                   <li>
-                      <a href="download.html" class="navbar-link">Download</a>
+                      <a href="../download.html" class="navbar-link">Download</a>
                   </li>
                   <li>
-                      <a href="contact.html" class="navbar-link">Contact</a>
+                      <a href="../contact.html" class="navbar-link">Contact</a>
                   </li>
               </ul>
           </div>
@@ -83,27 +84,35 @@
     </header>
     <!-- The End of Primery Navigation Bar -->
     
-    <div class="center">
-      <!-- Category Section -->
-      <!-- <div class="category-section">
-        <div class="category-button">
-          <a href="#" class="category-button-link"><i class="fa-solid fa-print category-button-icon"></i>Thermal Split Printer</a>
+    <main class="center">
+      <!-- Modal Box -->
+      <div class="modal-box-container">
+        <!-- Modal -->
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div class="modal-title">Some Text</div>
+            <button data-close-button class="modal-close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body-text">
+              ကုန်ပစ္စည်းများကိုဝယ်ယူလိုပါက<a href="../contact.html" class="modal-contact-link">Contact</a>စာမျက်နှာတွင်ဖုန်းနံပါတ်နှင့်တကွဝယ်ယူနိုင်သည့်နေရပ်လိပ်စာသို့ဆက်သွယ်ဝယ်ယူနိုင်ပါသည်။
+            </div>
+            <button data-close-button class="modal-body-button">
+              Ok
+            </button>
+          </div>
         </div>
-        <div class="category-button">
-          <a href="#" class="category-button-link"><i class="fa-solid fa-barcode category-button-icon"></i>Wireless Scanner</a>
-        </div>
-        <div class="category-button">
-          <a href="#" class="category-button-link"><i class="fa-solid fa-cash-register category-button-icon"></i>Cash Drawer</a>
-        </div>
-      </div> -->
-      <!-- The End of Category Section -->
+        <!-- The End of Modal -->
+        <div id="modal-overlay"></div>
+      </div>
+      <!-- The End of Modal Box -->
 
       <!-- Tab Session -->
-      <div class="tab-container">
+      <section class="tab-container">
         <div class="tab-box">
-          <button class="tab active"><a href="#"><i class="fa-solid fa-print tab-icon"></i>Slip Printer</a></button>
-          <button class="tab"><a href="#"><i class="fa-solid fa-barcode tab-icon"></i>Wireless Scanner</a></button>
-          <button class="tab"><a href="#"><i class="fa-solid fa-cash-register tab-icon"></i>Cash Drawer</a></button>
+          <button class="tab active"><a href="splitprinter.html"><i class="fa-solid fa-print tab-icon"></i>Slip Printer</a></button>
+          <button class="tab"><a href="scanner.html"><i class="fa-solid fa-barcode tab-icon"></i>Wireless Scanner</a></button>
+          <button class="tab"><a href="cashdrawer.html"><i class="fa-solid fa-cash-register tab-icon"></i>Cash Drawer</a></button>
         </div>
         <!-- The Content Box -->
         <div class="content-box">
@@ -122,22 +131,22 @@
                   <div class="product-card-image">
                     <div class="product-card-image-small">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-ii-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-ii-4.webp"
+                        class="product-card-image-small-1" 
+                        alt="Thermal-Slip-Printer-8330-ii"
+                      />
+                      <img
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-ii-1.webp"
                         class="product-card-image-small-1"
                         alt="Thermal-Slip-Printer-8330-ii"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-ii-1.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-ii-2.webp"
                         class="product-card-image-small-1"
                         alt="Thermal-Slip-Printer-8330-ii"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-ii-2.webp"
-                        class="product-card-image-small-1"
-                        alt="Thermal-Slip-Printer-8330-ii"
-                      />
-                      <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-ii-3.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-ii-3.webp"
                         class="product-card-image-small-1"
                         alt="Thermal-Slip-Printer-8330-ii"
                       />
@@ -147,9 +156,10 @@
                     </div>
                     <div class="product-card-image-big">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-ii-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-ii-4.webp"
                         class="product-card-image-big-1"
                         alt="Thermal-Slip-Printer-8330-ii"
+                        loading="lazy"
                       />
                     </div>
                     <!-- The End of Product Card Image  -->
@@ -217,8 +227,9 @@
                       </ol>
                     </div>
                     <div class="product-card-price">
-                      $49
-                      <!-- <span>$120.99</span> -->
+                      <button data-modal-target="#modal">
+                        $49
+                      </button>
                     </div>
                   </div>
                   <!-- The End of Product Card Content -->
@@ -231,22 +242,22 @@
                   <div class="product-card-image">
                     <div class="product-card-image-small">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-4.webp"
                         class="product-card-image-small-2"
                         alt="Thermal-Slip-Printer-8330-II-W"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-1.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-1.webp"
                         class="product-card-image-small-2"
                         alt="Thermal-Slip-Printer-8330-II-W"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-2.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-2.webp"
                         class="product-card-image-small-2"
                         alt="Thermal-Slip-Printer-8330-II-W"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-3.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-3.webp"
                         class="product-card-image-small-2"
                         alt="Thermal-Slip-Printer-8330-II-W"
                       />
@@ -255,7 +266,7 @@
                     </div>
                     <div class="product-card-image-big">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-II-W-4.webp"
                         class="product-card-image-big-2"
                         alt="Thermal-Slip-Printer-8330-II-W"
                       />
@@ -305,7 +316,7 @@
                       </tr>
                     </table>
                     <div class="product-card-about">
-                      <h3>About Something</h3>
+                      <h3>What’s in the box:</h3>
                       <ol>
                         <li>
                           AC Adapter and Power Cable 1 pc
@@ -325,8 +336,9 @@
                       </ol>
                     </div>
                     <div class="product-card-price">
-                      $44 
-                      <!-- <span>$120.99</span> -->
+                      <button data-modal-target="#modal">
+                        $44 
+                      </button>
                     </div>
                   </div>
                   <!-- The End of Product Card Content -->
@@ -339,22 +351,22 @@
                   <div class="product-card-image">
                     <div class="product-card-image-small">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-L-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-L-4.webp"
                         class="product-card-image-small-3"
                         alt="product-card-image-small-1"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-L-1.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-L-1.webp"
                         class="product-card-image-small-3"
                         alt="product-card-image-small-2"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-L-2.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-L-2.webp"
                         class="product-card-image-small-3"
                         alt="product-card-image-small-3"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-L-3.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-L-3.webp"
                         class="product-card-image-small-3"
                         alt="product-card-image-small-4"
                       />
@@ -363,7 +375,7 @@
                     </div>
                     <div class="product-card-image-big">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-L-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-L-4.webp"
                         class="product-card-image-big-3"
                         alt="product-card-image-big-1"
                       />
@@ -413,7 +425,7 @@
                       </tr>
                     </table>
                     <div class="product-card-about">
-                      <h3>About Something</h3>
+                      <h3>What’s in the box:</h3>
                       <ol>
                         <li>
                           AC Adapter and Power Cable 1 pc
@@ -433,8 +445,9 @@
                       </ol>
                     </div>
                     <div class="product-card-price">
-                      $65
-                      <!-- <span>$120.99</span> -->
+                      <button data-modal-target="#modal">
+                        $65
+                      </button>
                     </div>
                   </div>
                   <!-- The End of Product Card Content -->
@@ -447,17 +460,17 @@
                   <div class="product-card-image">
                     <div class="product-card-image-small">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-U-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-U-4.webp"
                         class="product-card-image-small-4"
                         alt="product-card-image-small-1"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-U-1.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-U-1.webp"
                         class="product-card-image-small-4"
                         alt="product-card-image-small-2"
                       />
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-U-2.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-U-2.webp"
                         class="product-card-image-small-4"
                         alt="product-card-image-small-3"
                       />
@@ -471,7 +484,7 @@
                     </div>
                     <div class="product-card-image-big">
                       <img
-                        src="image-50/Printer-50/Thermal-Slip-Printer-8330-U-4.webp"
+                        src="../image-50/Printer-50/Thermal-Slip-Printer-8330-U-4.webp"
                         class="product-card-image-big-4"
                         alt="product-card-image-big-1"
                       />
@@ -521,7 +534,7 @@
                       </tr>
                     </table>
                     <div class="product-card-about">
-                      <h3>About Something</h3>
+                      <h3>What’s in the box:</h3>
                       <ol>
                         <li>
                           AC Adapter and Power Cable 1 pc
@@ -541,8 +554,9 @@
                       </ol>
                     </div>
                     <div class="product-card-price">
-                      $99.99 
-                      <!-- <span>$120.99</span> -->
+                      <button data-modal-target="#modal">
+                        $40
+                      </button>
                     </div>
                   </div>
                   <!-- The End of Product Card Content -->
@@ -553,422 +567,25 @@
             <!-- The End of Product Card Session -->
           </div>
           <!-- The End of Split Printer -->
-
-          <!-- Wireless Scanner -->
-          <div class="content">
-            <!-- Product card session -->
-            <div class="product-card-container">
-              <div class="product-card-container-box">
-                <h1 class="product-card-container-box-heading">
-                  <span>featured</span> products
-                </h1>
-                <!-- Product Card - 05 (Wireless Scanner)-->
-                <div class="product-card">
-                  <!-- Product Card Image -->
-                  <div class="product-card-image">
-                    <div class="product-card-image-small">
-                      <img
-                        src="image-50/Scanner-50/Scanner-G01-1-50.webp"
-                        class="product-card-image-small-5"
-                        alt="product-card-image-small-1"
-                      />
-                      <img
-                        src="image-50/Scanner-50/Scanner-G01-2-50.webp"
-                        class="product-card-image-small-5"
-                        alt="product-card-image-small-2"
-                      />
-                      <img
-                        src="image-50/Scanner-50/Scanner-G01-3-50.webp"
-                        class="product-card-image-small-5"
-                        alt="product-card-image-small-3"
-                      />
-                      <img
-                        src="image-50/Scanner-50/Scanner-G01-3-50.webp"
-                        class="product-card-image-small-5"
-                        alt="product-card-image-small-4"
-                      />
-                      <!-- <img src="image/slipprinter.jpg" class="product-card-image-small-1" alt="product-card-image-small-3"> -->
-                      <!-- <img src="image/slipprinternoinfo.jpg" class="product-card-image-small-1" alt="product-card-image-small-4"> -->
-                    </div>
-                    <div class="product-card-image-big">
-                      <img
-                        src="image-50/Scanner-50/Scanner-G01-1-50.webp"
-                        class="product-card-image-big-5"
-                        alt="product-card-image-big-1"
-                      />
-                    </div>
-                    <!-- The End of Product Card Image  -->
-                  </div>
-                  <!-- The Product Card Content -->
-                  <div class="product-card-content">
-                    <h2>Barcode Scanner</h2>
-                    <div class="product-card-content-stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <table>
-                      <tr>
-                        <td class="product-card-content-text1">Model</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">G01</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Transmission mode</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">wireless, USB-HID and USB-COM</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Interface</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">
-                          USB
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Function</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">1D Barcode  & 2D QR Code </td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Storage capacity</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">Two million character</td>
-                      </tr>
-                    </table>
-                    <div class="product-card-about">
-                      <h3>About This Barcode Scanner:</h3>
-                      <ol>
-                        <li>
-                          Support USB and wireless data transmission 
-                        </li>
-                        <li>
-                          Scanner supports USB-HID and USD-COM
-                        </li>
-                        <li>
-                          Receiver supports USB-HID and USD-COM
-                        </li>
-                        <li>
-                          Scanner and receiver support online updates
-                        </li>
-                        <li>
-                          Wireless long distance transmission 
-                        </li>
-                        <li>
-                          Long-capacity storage data
-                        </li>
-                        <li>
-                          With a large capacity battery, long standby time of the power management system
-                        </li>
-                      </ol>
-                    </div>
-                    <div class="product-card-about">
-                      <h3>What’s in the box:</h3>
-                      <ol>
-                        <li>
-                          Scanner 1pc
-                        </li>
-                        <li>
-                          Receiver 1pc
-                        </li>
-                        <li>
-                          Charging cable 1pc
-                        </li>
-                        <li>
-                          User Manual 1 pc
-                        </li>
-                      </ol>
-                    </div>
-                    <div class="product-card-price">
-                      $36
-                      <!-- <span>$120.99</span> -->
-                    </div>
-                  </div>
-                  <!-- The End of Product Card Content -->
-                </div>
-                <!-- The End of Product Card - 05 (Wireless Scanner) -->
-
-              </div>
-            </div>
-            <!-- The End of Product Card Session -->
-          </div>
-          <!-- The End of Wireless Scanner -->
-
-          <!-- Cash Drawer -->
-          <div class="content">
-            <!-- Product card session -->
-            <div class="product-card-container">
-              <div class="product-card-container-box">
-                <h1 class="product-card-container-box-heading">
-                  <span>featured</span> products
-                </h1>
-
-                <!-- Product Card - 07 (Cash Drawer) -->
-                <div class="product-card">
-                  <!-- Product Card Image -->
-                  <div class="product-card-image">
-                    <div class="product-card-image-small">
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400DF-1.webp"
-                        class="product-card-image-small-8"
-                        alt="product-card-image-small-1"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400DF-2.webp"
-                        class="product-card-image-small-8"
-                        alt="product-card-image-small-2"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400DF-3.webp"
-                        class="product-card-image-small-8"
-                        alt="product-card-image-small-3"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400DF-3.webp"
-                        class="product-card-image-small-8"
-                        alt="product-card-image-small-4"
-                      />
-                      <!-- <img src="image/slipprinter.jpg" class="product-card-image-small-1" alt="product-card-image-small-3"> -->
-                      <!-- <img src="image/slipprinternoinfo.jpg" class="product-card-image-small-1" alt="product-card-image-small-4"> -->
-                    </div>
-                    <div class="product-card-image-big">
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400DF-1.webp"
-                        class="product-card-image-big-8"
-                        alt="product-card-image-big-1"
-                      />
-                    </div>
-                    <!-- The End of Product Card Image  -->
-                  </div>
-                  <!-- The End of Product Card -->
-                  <div class="product-card-content">
-                    <h2>Cash Drawer</h2>
-                    <div class="product-card-content-stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <table>
-                      <tr>
-                        <td class="product-card-content-text1">Model</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">BQ400DF</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Dimensions</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">405W x 410L x 110H(mm)</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Layout</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">4Bills & 6Coils</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Interface</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">RJ 11</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Net Weight</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">5.2kg</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Gross Weight</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">5.8kg</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Voltage</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">12V</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Warranty</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">1 Year</td>
-                      </tr>
-                    </table>
-                    <!-- <div class="product-card-about">
-                      <h3>About Something</h3>
-                      <ol>
-                        <li>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Odio, non.
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Nam quas dignissimos aut.
-                        </li>
-                        <li>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Corporis, saepe eveniet.
-                        </li>
-                      </ol>
-                    </div> -->
-                    <div class="product-card-price">
-                      $37
-                      <!-- <span>$120.99</span> -->
-                    </div>
-                  </div>
-                  <!-- The Endo of Product Card Content -->
-                </div>
-                <!-- The End of Product Card - 07 (Cash Drawer) -->
-                <!-- Product Card - 06 (Cash Drawer) -->
-                <div class="product-card">
-                  <!-- Product Card Image -->
-                  <div class="product-card-image">
-                    <div class="product-card-image-small">
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400AF-1.webp"
-                        class="product-card-image-small-7"
-                        alt="product-card-image-small-1"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400AF-2.webp"
-                        class="product-card-image-small-7"
-                        alt="product-card-image-small-2"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400AF-3.webp"
-                        class="product-card-image-small-7"
-                        alt="product-card-image-small-3"
-                      />
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400AF-3.webp"
-                        class="product-card-image-small-7"
-                        alt="product-card-image-small-4"
-                      />
-                      <!-- <img src="image/slipprinter.jpg" class="product-card-image-small-1" alt="product-card-image-small-3"> -->
-                      <!-- <img src="image/slipprinternoinfo.jpg" class="product-card-image-small-1" alt="product-card-image-small-4"> -->
-                    </div>
-                    <div class="product-card-image-big">
-                      <img
-                        src="image-50/CashDrawer/CashDraw-BQ400AF-1.webp"
-                        class="product-card-image-big-7"
-                        alt="product-card-image-big-1"
-                      />
-                    </div>
-                    <!-- The End of Product Card Image  -->
-                  </div>
-                  <!-- The Product Card Content -->
-                  <div class="product-card-content">
-                    <h2>Cash Drawer</h2>
-                    <div class="product-card-content-stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <table>
-                      <tr>
-                        <td class="product-card-content-text1">Model</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">BQ400AF</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Dimensions</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">405W x 410L x 110H(mm)</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Layout</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">4Bills & 6Coils</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Interface</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">RJ 11</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Net Weight</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">5.2kg</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Gross Weight</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">5.8kg</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Voltage</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">12V</td>
-                      </tr>
-                      <tr>
-                        <td class="product-card-content-text1">Warranty</td>
-                        <td class="product-card-content-text2">:</td>
-                        <td class="product-card-content-text3">1 Year</td>
-                      </tr>
-                    </table>
-                    <!-- <div class="product-card-about">
-                      <h3>About Something</h3>
-                      <ol>
-                        <li>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Odio, non.
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Nam quas dignissimos aut.
-                        </li>
-                        <li>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Corporis, saepe eveniet.
-                        </li>
-                      </ol>
-                    </div> -->
-                    <div class="product-card-price">
-                      $39
-                      <!-- <span>$120.99</span> -->
-                    </div>
-                  </div>
-                  <!-- The End of Product Card Content -->
-                </div>
-                <!-- The End of Product Card - 06 (Cash Drawer)  -->
-              </div>          
-            </div>
-            <!-- The End of Product Card Session -->
-          </div>
-          <!-- The End of Cash Drawer -->
         </div>
         <!-- The End of Content Box -->
-      </div>
+      </section>
       <!-- The End of Tab Session -->
 
       <br />
-    </div>
+    </main>
     <!-- Footer -->
     <footer>
       <!-- The Footer Container -->
       <div class="footer-container">
         <!-- The left side of the Footer -->
         <div class="footer-left footer-box">
-          <h2>About us</h2>
+          <h2>Social Media</h2>
           <div class="footer-content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              perspiciatis soluta voluptate cumque. Labore, sequi?
-            </p>
             <div class="footer-social">
               <div class="footer-social-link">
                 <a href="https://www.facebook.com/quickmart2022?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.facebook.com/quickmart2022?mibextid=ZbWKwL"><span>www.Facebook-TopOne.com</span></a>
-              </div>
-              <div class="footer-social-link">
-                <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
-                <a href="#"><span>www.Messager-TopOne.com</span></a>
-              </div>  
-              <div  class="footer-social-link">
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><span>www.Youtube-TopOne.com</span></a>
+                <a href="https://www.facebook.com/quickmart2022?mibextid=ZbWKwL"><span>Facebook-TopOne</span></a>
               </div>
             </div>
           </div>
@@ -1017,36 +634,51 @@
 
         <!-- The Right side of the Footer -->
         <div class="footer-right footer-box">
-          <h2>Quick Link</h2>
-          <div class="footer-content">
-            <div class="footer-link">
-              <a href="index.html">
-                <i class="fa-solid fa-house"></i>
-                <span> Home </span>
-              </a>
+            <h2>Quick Link</h2>
+            <div class="footer-content">
+                <div class="footer-link">
+                    <a href="../index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+                <div class="footer-link">
+                    <a href="splitprinter.html">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Split Printer</span>
+                    </a>
+                </div>
             </div>
-            <div class="footer-link">
-              <a href="product.html">
-                <i class="fa-solid fa-print"></i>
-                <span> Product </span>
-              </a>
+  
+            <div class="footer-content-1">
+                <div class="footer-link">
+                    <a href="scanner.html">
+                        <i class="fa-solid fa-barcode"></i>
+                        <span>Scanner</span>
+                    </a>
+                </div>
+                <div class="footer-link">
+                    <a href="cashdrawer.html">
+                        <i class="fa-solid fa-cash-register"></i>
+                        <span>Cash Drawer</span>
+                    </a>
+                </div>
             </div>
-          </div>
-
-          <div class="footer-content-1">
-            <div class="footer-link">
-              <a href="download.html">
-                <i class="fa-solid fa-download"></i>
-                <span> Download </span>
-              </a>
+  
+            <div class="footer-content-1">
+                <div class="footer-link">
+                    <a href="../download.html">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download</span>
+                    </a>
+                </div>
+                <div class="footer-link">
+                    <a href="../contact.html">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
             </div>
-            <div class="footer-link">
-              <a href="contact.html">
-                <i class="fa-solid fa-phone"></i>
-                <span> Contact </span>
-              </a>
-            </div>
-          </div>
         </div>
         <!-- The End Right side of the Footer -->
       </div>

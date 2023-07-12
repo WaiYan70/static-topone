@@ -48,6 +48,22 @@ const menuButton = (toggleId, navbarMenu, menuOverlay,dropdown, navbardropdown) 
 };
 menuButton('navbar-toggle','navbar-menu','menu-overlay','dropdown','navbar-link-dropdown');
 
+// Blur Effect for "Main-Image-Advertisment" and "Brand Products"
+const blurImage = document.querySelectorAll(".blurred-image");
+blurImage.forEach(div => {
+  const img = div.querySelector("img");
+  function loaded(){
+    // show image
+    div.classList.add("loaded");
+  }
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load",loaded);
+  }
+});
+// The End of Blur Effect for "Main-Image-Advertisement" and "Brand Products"
+
 // Swiper for Image Slider with Auto Play Progress
 // Main Slide Image (advertisement)
 const progressCircle = document.querySelector(".autoplay-progress svg");
@@ -58,7 +74,7 @@ var swiper = new Swiper(".main-image-container-swiper", {
     centeredSlides: true,
     grabCursor: true,
     autoplay: {
-      delay: 4000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -91,31 +107,12 @@ var swiper = new Swiper(".slide-content", {
     el: ".swiper-pagination-card",
     clickable: true,
     disableOnInteraction: false,
-    dynamicBullets: true,
+    // dynamicBullets: true,
   },
   navigation: {
     nextEl: ".brand-product-card-next",
     prevEl: ".brand-product-card-prev",
   },
-  // breakpoints: {
-  //   0: {
-  //     slidesPerView: 1,
-  //     spaceBetween: 25,
-  //   },
-  //   580: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 25,
-  //   },
-  //   1024: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 35,
-  //   },
-  //   1440: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 45,
-  //   },
-  // },
-
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -123,28 +120,20 @@ var swiper = new Swiper(".slide-content", {
     },
     580: {
       slidesPerView: 2,
-      spaceBetween: 30,
+      spaceBetween: 25,
     },
-    1024: {
+    1120: {
       slidesPerView: 3,
-      spaceBetween: 60,
+      spaceBetween: 35,
+    },
+    1440: {
+      slidesPerView: 3,
+      spaceBetween: 65,
+    },
+    1600: {
+      slidesPerView: 3,
+      spaceBetween: 85,
     },
   },
 });
 // The End of Brand Products
-
-// Testimonial Section
-
-var swiper = new Swiper(".testimonial", {
-  slidesPerView: 1,
-  grabCursor: true,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination-testimonial",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".testimonial-next",
-    prevEl: ".testimonial-prev",
-  },
-});

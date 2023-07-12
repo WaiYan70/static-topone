@@ -12,8 +12,8 @@
   --grey: #f3f3f3;
 
   --white-color: #f2f2f2;
-  --red-color: #ff0000;
-  --red-color-hover: #e70707d2;
+  --red-color: hsl(0, 100%, 50%);
+  --red-color-hover: hsla(0, 100%, 70%);
   --black-color: #222222;
   --background: #ebe8e0;
   /* Colors */
@@ -24,6 +24,7 @@
   --white-color-light: hsl(0, 0%, 90%);
   /* --body-color: hsl(0, 0%, 95%); */
   --body-color: hsl(220, 100%, 97%);
+  /* --box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2) */
   
 
   /* Font and typography */
@@ -97,6 +98,25 @@ a{
     opacity: 1;
   }
 }
+@keyframes pulse {
+  0%{
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50%{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100%{
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes pre-loading {
+  0%{
+    background-color: hsl(0, 0%, 50%);
+  }
+  100%{
+    background-color: hsl(0, 0%, 75%);
+  }
+}
 /* The End of KeyFrame for animation */
 
 /* Navigation Bar */
@@ -121,13 +141,6 @@ a{
   justify-content: space-between;
   align-items: center;
 }
-/* display: inline-flex */
-/* .primary-navbar-header .navbar > .navbar-data .navbar-logo{
-  font-size: 2.5em;
-  font-weight: var(--font-semi-bold);
-  color: var(--red-color);
-  animation: movingfromleft 500ms ease-in-out;
-} */
 .primary-navbar-header .navbar > .navbar-data .navbar-logo > img{
   width: 110px;
   height: 5.5em;
@@ -173,7 +186,6 @@ a{
       transition: top 500ms ease-in-out, opacity 500ms ease-in-out, transform 650ms ease-in-out;
   }
   .primary-navbar-header .navbar > .navbar-menu.active{
-      /* width: 100%; */
       transform: translateY(0px);
   }
   .primary-navbar-header .navbar > .navbar-menu::-webkit-scrollbar{
@@ -183,15 +195,15 @@ a{
       background-color: var(--white-color-normal);
   }
   .primary-navbar-header .navbar > .navbar-menu .navbar-list .navbar-link{
-      margin-inline: 1.25em;
+      margin-inline: 1.25rem;
   }
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .navbar-link{
   color: var(--black-color-normal);
   background-color: var(--white-color-normal);
-  font-size: 1.75em;
+  font-size: 1.7rem;
   font-weight: var(--font-semi-bold);
-  padding: 1.25em 0em;
+  padding: 1.5rem 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -201,7 +213,7 @@ a{
 /* Current Page and High Light Line */
 .primary-navbar-header .navbar > .navbar-menu .navbar-list > li{
   position: relative;
-  margin: 0em 1.5em;
+  margin: 0rem 1.5rem;
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .navbar-link.currentPage{
   color: var(--red-color);
@@ -252,8 +264,8 @@ visibility: hidden;
   cursor: pointer;
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown .dropdown-arrow{
-  font-size: 0.75em;
-  /* pointer-events: none; */
+  font-size: 1.25rem;
+  pointer-events: none;
   transition: transform 650ms ease-in-out;
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown.active .dropdown-arrow{
@@ -262,22 +274,22 @@ visibility: hidden;
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown > .dropdown-menu{
   max-height: 0;
   overflow: hidden;
-  transition: max-height 550ms ease-in-out;
+  transition: max-height 450ms ease-in-out;
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown.active > .dropdown-menu{
   max-height: 1000px;
-  transition: max-height 550ms ease-in-out;
+  transition: max-height 450ms ease-in-out;
 }
 .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown > .dropdown-menu .dropdown-menu-item{
   color: var(--black-color-normal);
   background-color: var(--white-color-normal);
-  padding: 1.25em 1.25em 1.25em 2.25em;
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
   display: flex;
   align-items: center;
   column-gap: 0.75em;
-  font-size: 1.35em;
+  font-size: 1.35rem;
   font-weight: var(--font-semi-bold);
-  transition: background-color 300ms;
+  transition: background-color 300ms ease-in-out;
   border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }   
 /* The End of dropdown */
@@ -346,16 +358,16 @@ visibility: hidden;
       top: 9em;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 300ms, top 300ms;
+      transition: opacity 300ms ease-in-out, top 300ms ease-in-out;
   }
    .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown:hover > .dropdown-menu{
       opacity: 1;
       top: 6.5em;
       pointer-events: initial;
-      transition: top 300ms;
+      transition: top 300ms ease-in-out;
   }
   .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown > .dropdown-menu .dropdown-menu-item{
-      padding-inline: 1em 1.5em;
+      padding-inline: 1rem 1.5rem;
   }
   .primary-navbar-header .navbar > .navbar-menu .navbar-list .dropdown > .dropdown-menu .dropdown-menu-item:hover{
       background-color: var(--white-color-light);
@@ -371,12 +383,11 @@ visibility: hidden;
   margin: 0px auto;
   padding-top: 8em;
   width: 75%;
-  /* border: 3px solid green; */
 }
 
 /* Main Slide Show / Image Slider (Advertisment) */
 .main-image-container {
-  margin-top: 1em;
+  margin-top: 1rem;
   width: 100%;
   height: 400px;
   /* background-color: var(--red); */
@@ -385,21 +396,40 @@ visibility: hidden;
 .main-image-wrapper,
 .main-image-slide {
   position: relative;
-  /* overflow: hidden; */
-  /* To appear the swiper-next-button, 
-    it doesn't need the overflow attribute */
   width: 100%;
   height: 100%;
 }
-/* .slide{
-    overflow: hidden;
-} */
+
+/* blurred-image for main-image-advertisement*/
+.main-image-wrapper .blurred-image{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.main-image-wrapper .blurred-image::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2000ms infinite;
+}
+.main-image-wrapper .blurred-image.loaded::before{
+  content: none;
+}
+.main-image-wrapper .blurred-image.loaded > .image{
+  opacity: 1;
+}
+.main-image-wrapper .blurred-image > .image{
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+} 
+/* The end of blurred-image for main-image-advertisement*/
+
 .main-image-slide::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.1); */
   z-index: 1;
 }
 .main-image-wrapper .main-image-slide picture .image {
@@ -417,23 +447,13 @@ visibility: hidden;
   width: 100%;
   z-index: 2;
 }
-.main-image-wrapper .main-image-slide .image-data span.text {
-  font-size: 3vw;
-  font-weight: 400;
-  color: var(--whitetext);
-}
-.main-image-wrapper .main-image-slide .image-data h2 {
-  font-size: 4vw;
-  font-weight: 600;
-  color: var(--whitetext);
-}
 .main-image-wrapper .main-image-slide .image-data .button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   /* bottom: 10em; */
   display: inline-block;
   /* position: relative; */
-  padding: 0.85em 2em;
+  padding: 1rem 2rem;
   color: var(--blacktext);
   background-color: transparent;
   border: 2px solid var(--blacktext);
@@ -460,12 +480,10 @@ visibility: hidden;
   height: 44px;
   color: var(--black-color-normal);
   border-radius: 50%;
-  /* background: rgba(255, 255, 255, 0.3); */
   background-color: transparent;
   transition: color 400ms ease-in-out;
 }
 .main-image-container .main-image-btn:hover {
-  /* background: rgba(255, 255, 255, 0.8); */
   color: var(--red-color);
 }
 .main-image-container .main-image-btn::before,
@@ -511,35 +529,32 @@ visibility: hidden;
 
 /* Brand Products Slider/ Slide show */
 .brand-slide-container {
-  /* height: 48vh; */
-  margin-top: 3.5em;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--red); */
 }
 .brand-slide-container .slide-container {
   width: 100%;
   background-color: var(--body-color);
   border-radius: 10px;
-  /* padding: 0px; */
 }
 .brand-slide-container .slide-container .slide-name {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 650;
   color: var(--blacktext);
   text-align: center;
 }
 .brand-slide-container .slide-container .slide-content {
-  padding: 1.4em 2em 1.4em 2em;
-  margin: 0em 2em 1.4em 2em;
+  padding: 1.4rem 2rem;
+  margin: 0rem 2rem 1.4rem 2rem;
   background-color: var(--body-color);
   overflow: hidden;
   border-radius: 25px;
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card {
   border-radius: 25px;
-  /* background-color: var(--black-color-ligher); */
+  box-shadow: 0px 2px 5px 0px rgb(0, 0, 0, 0.2);
   background-image: linear-gradient(
     to top,
     var(--white-color-light),
@@ -556,58 +571,85 @@ visibility: hidden;
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content {
   position: relative;
 }
+
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .card-image {
   position: relative;
-  /* width and height can be changed 255.33*/
-  /* min-width: 350px; */
-  width: 100%;
-  height: 100%;
-  border-radius: 25px 25px 0px 0px;
-  /* background-color: var(--black-color-normal); */
-  background-color: transparent;
-  /* padding: 0.3em; */
+  display: block;
+  background-color: var(--white-color-normal);
 }
-.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .card-image .card-img {
-  /* position: relative; */
+
+/* blurred-image for brand-products*/
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .blurred-image{
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px 25px 0px 0px;
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .blurred-image::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2000ms infinite;
+  /* background-color: red; */
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .blurred-image.loaded::before{
+  content: none;
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .blurred-image.loaded > .card-img{
+  opacity: 1;
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .blurred-image > .card-img{
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+} 
+/* The end of blurred-image for brand-products*/
+
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .image-content .card-image .card-img {
+  display: block;
+  width: 100%;
+  /* it needs to change the height due to the media query for large screen size */
+  max-height: 350px;
+  aspect-ratio: 1/1; /* "aspect-ratio" can be used but sometime it can't be support in some browser especially outdated browser */
+  object-position: center;
   object-fit: cover;
   border-radius: 25px 25px 0px 0px;
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content{
+  padding-top: 1rem;
+  height: 235px;
+  justify-content: space-between;
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-name {
   font-size: 2rem;
   font-weight: 500;
+  height: 30px;
   color: var(--black-color-normal);
-  margin-top: 0.2em;
-  margin-bottom: 0.75em;
   text-align: center;
 }
  .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-description {
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: var(--black-color-normal);
   text-align: center;
-  /* margin: 1em 1em; */
+}
+.brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .text-spacing{
+  line-height: 2;
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button {
-  border: none;
-  /* font-size: 1.75rem;
-  font-weight: 500; */
-  padding: 1em 1.2em;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  padding: 0.65em 0em;
   margin: 1em 0em 1em 0em;
   background-color: var(--white-color-normal);
-  border-radius: 55px;
+  border-radius: 0.25em;
   cursor: pointer;
-  /* text-decoration: none; */
-  /* transition: background-color 1000ms ease-in-out; */
-  transition-property: background-color;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
+  transition: background-color 500ms ease-in-out;
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button a{
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding: 0.9em;
+  padding: 0.9rem 1em;
   color: var(--blacktext);
   text-decoration: none;
   transition-property: color;
@@ -615,10 +657,11 @@ visibility: hidden;
   transition-timing-function: ease-in-out;
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button:hover {
-  background-color: var(--red-color-hover);
+  border: 1px solid var(--black-color-ligher);
+  background-color: var(--red-color);
 }
 .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content .card-button a:hover{
-  color: var(--white-color-normal);
+  color: var(--black-color);
 }
 
 /* Brand Product Slide  Swiper Button */
@@ -626,8 +669,6 @@ visibility: hidden;
   height: 43.4px;
   width: 43.4px;
   color: var(--black-color);
-  /* background-color: transparent;
-  border-radius: 50%; */
   transition: color 400ms ease-in-out;
 }
 .brand-slide-container .slide-container .brand-product-card-slider:hover {
@@ -658,32 +699,22 @@ visibility: hidden;
 }
 .brand-slide-container .slide-container .swiper-pagination-bullet {
   opacity: 1;
-  width: 12px;
-  height: 12px;
+  width: 26px;
+  height: 7px;
+  border-radius: 25px;
   background-color: var(--black-color-normal);
   visibility: visible;
 }
 .brand-slide-container .slide-container .swiper-pagination-bullet-active {
   background-color: var(--red-color);
 }
-/* .swiper-pagination-bullet {
-  opacity: 1;
-  width: 12px;
-  height: 12px;
-  background-color: var(--white-color-normal);
-  visibility: visible;
-}
-.swiper-pagination-bullet-active {
-  background-color: var(--red-color);
-} */
-
 /* The End of Swiper Pagination For Advertisment and Brand Product Slider */
 
 /* The End of Brand Products Slider/ Slide show  */
 
 /* Best Seller Section */
 .best-seller-section h1{
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
   color: var(--red);
@@ -695,21 +726,23 @@ visibility: hidden;
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
-  /* border: 1px solid black; */
 }
 .best-seller-box {
   width: 500px;
-  margin: 1em 0em;
+  margin: 1em 1em;
   border: 2px solid var(--red);
   border-radius: 20px;
   /* background-color: var(--blacktext); */
   background-image: linear-gradient(
     to left,
-    var(--whitetext),
+    var(--white-color-normal),
     var(--contentbackground)
   );
 }
-.best-seller-box img {
+.best-seller-box > .pre-loading-image{
+  animation: pre-loading 1000ms linear infinite alternate;
+}
+.best-seller-box > img {
   width: 275px;
   height: 275px;
   display: block;
@@ -717,66 +750,61 @@ visibility: hidden;
   border-radius: 20px 0px 0px 20px;
   float: left;
 }
-.best-seller-box .best-seller-header,
-.best-seller-box .best-seller-text {
-  /* width: 30%; */
+.best-seller-box > .best-seller-header,
+.best-seller-box > .best-seller-text {
   width: 200px;
   float: right;
 }
-.best-seller-box .best-seller-header {
-  font-size: 1.25em;
+.best-seller-box > .best-seller-header > h2 {
+  line-height: 2;
+  font-size: 1.8rem;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0.3em 0em;
-  /* border: 1px solid black; */
 }
-/* .best-seller-box .best-seller-text {
-  margin: 1em 1em 1em 1em;
-  display: flex;
-  justify-content: space-evenly;
-  text-align: left;
-  list-style: none;
-  border: 1px solid blue;
-} */
-.best-seller-box .best-seller-text {
+.best-seller-box > .best-seller-text {
   display: blocks;
   text-align: left; 
 }
-.best-seller-box .best-seller-text .best-seller-text-1 {
-  letter-spacing: 0.1em;
-  font-size: 1.5em;
+.best-seller-box > .best-seller-text .best-seller-text-1,
+.best-seller-box > .best-seller-text .best-seller-text-2,
+.best-seller-box > .best-seller-text .best-seller-text-3{
+  line-height: 1.5;
+}
+.best-seller-box > .best-seller-text .best-seller-text-1 {
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   vertical-align: center;
   /* border: 1px solid black; */
 }
-.best-seller-box .best-seller-text .best-seller-text-2 {
-  font-size: 1.45em;
+.best-seller-box > .best-seller-text .best-seller-text-2 {
+  font-size: 1.45rem;
   font-weight: 600;
   vertical-align: center;
   /* border: 1px solid black; */
 }
-.best-seller-box .best-seller-text .best-seller-text-3 {
+.best-seller-box > .best-seller-text .best-seller-text-3 {
   letter-spacing: 0.025rem;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 400;
   vertical-align: center;
   padding-inline: 0.25em;
   /* border: 1px solid black; */
 }
 /* Continues to adjust the button position and size */
-.best-seller-box .best-seller-button {
-  font-size: 1.8rem;
+.best-seller-box > .best-seller-button {
+  font-size: 1.6rem;
   display: inline-block;
   background-color: var(--red);
   color: var(--whitetext);
   text-decoration: none;
-  padding: 0.75em 0.85em;
-  margin: 0.75em 0em 0em 0em;
+  padding: 0.9rem 1.2rem;
+  margin-top: 1.5rem;
   border-radius: 1.45em;
   /* border: 1px solid black; */
   /* margin attribute will adjust the button */
 }
-.best-seller-box .best-seller-button:hover {
+.best-seller-box > .best-seller-button:hover {
   background-color: var(--light-red);
 }
 /* The End of Best Seller Section */
@@ -793,7 +821,7 @@ footer{
 }
 .footer-container .footer-box{
   flex-basis: 50%;
-  padding: 0.5em 2em;
+  padding: 1.25rem 2rem;
 }
 .footer-container .footer-box h2{
   font-size: 2.5rem;
@@ -802,7 +830,7 @@ footer{
 }
 .footer-container .footer-box .footer-content{
   position: relative;
-  margin: 1em 0em 0em 0em;
+  margin-top: 1rem;
 }
 .footer-container .footer-box .footer-content::before{
   position: absolute;
@@ -827,7 +855,7 @@ footer{
 .footer-container .footer-left .footer-content .footer-social  .footer-social-link{
   display: flex;  
   align-items: center;
-  margin: 1em;
+  margin: 1rem;
 }
 .footer-container .footer-left .footer-content .footer-social .footer-social-link a{
   color: var(--blacktext);
@@ -852,13 +880,13 @@ footer{
 }
 .footer-container .footer-left .footer-content .footer-social .footer-social-link a span{
   font-size: 1.8rem;
-  padding-left: 0.5em;
+  padding-left: 0.5rem;
 }
 /* The End of footer left */
 
 /* footer center */
 .footer-container .footer-center .footer-content td{
-  padding: 0.5em 0.5em;
+  padding: 0.5rem 0.5rem;
 }
 .footer-container .footer-center .footer-content .footer-place i,
 .footer-container .footer-center .footer-content .footer-phone i,
@@ -903,24 +931,24 @@ footer{
 .footer-container .footer-right .footer-content .footer-link,
 .footer-container .footer-right .footer-content-1 .footer-link{
   display: block;
-  margin: 1.5em 1em 2.5em 1em;
+  margin: 1.5rem 1rem 2.5rem 1rem;
 }
 .footer-container .footer-right .footer-content .footer-link a,
 .footer-container .footer-right .footer-content-1 .footer-link a{
-  padding: 1.8em 1.8em 1.2em 1em;
+  padding: 1.8rem 1.8rem 1.2rem 1rem;
   text-decoration: none;
   border: 2px solid var(--blacktext);
   border-radius: 50px;
 }
 .footer-container .footer-right .footer-content .footer-link i,
 .footer-container .footer-right .footer-content-1 .footer-link i{
-  font-size: 2.2em;
-  padding: 0em 0.25em 0em 0.25em;
+  font-size: 2rem;
+  padding: 0rem 0.35rem;
   color: var(--blacktext);
 }
 .footer-container .footer-right .footer-content .footer-link span,
 .footer-container .footer-right .footer-content-1 .footer-link span{
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 400;
   color: var(--blacktext);
 }
@@ -928,7 +956,6 @@ footer{
 
 footer .copy-right center{
   font-size: 1.25rem;
-  padding: 1em 0em;
 }
 footer .copy-right center span{
   color: var(--blacktext);
@@ -940,17 +967,18 @@ footer .copy-right center span{
   footer{
     position: relative;
   }
-
   .footer-container{
     flex-wrap: wrap;
     flex-direction: column;
   }
+  .footer-container .footer-right .footer-content .footer-link span,
+  .footer-container .footer-right .footer-content-1 .footer-link span{
+    font-size: 1.5rem;
+  }
 }
 /* @media (max-width: 1300px) */
 @media (900px < width < 1300px){
-  .footer-container .footer-right .footer-content{
-    flex-direction: column;
-  }
+  .footer-container .footer-right .footer-content,
   .footer-container .footer-right .footer-content-1{
     flex-direction: column;
   }
@@ -978,7 +1006,7 @@ footer .copy-right center span{
   }
   .best-seller-box {
     width: 700px;
-    margin: 1em 0em;
+    margin: 1rem 0rem;
     border: 2px solid var(--red);
     border-radius: 20px;
     background-image: linear-gradient(
@@ -995,40 +1023,39 @@ footer .copy-right center span{
     border-radius: 20px 0px 0px 20px;
     float: left;
   }
-  .best-seller-box .best-seller-header,
-  .best-seller-box .best-seller-text {
+  .best-seller-box > .best-seller-header,
+  .best-seller-box > .best-seller-text {
     /* width: 30%; */
     width: 220px;
     float: right;
   }
-  .best-seller-box .best-seller-header {
-    font-size: 1.35rem;
+  .best-seller-box > .best-seller-header > h2 {
+    font-size: 1.8rem;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
-    margin: 0.55em 0em;
-    padding-left: 1em;
+    margin: 0.55rem 0rem;
   }
-  .best-seller-box .best-seller-text {
+  .best-seller-box > .best-seller-text {
     display: block;
-    margin: 1em 1em 1em 1em;
+    margin: 1rem 1rem 1rem 1rem;
     text-align: left;
     list-style: none;
   }
-  .best-seller-box .best-seller-text .best-seller-text-1 {
+  .best-seller-box > .best-seller-text .best-seller-text-1 {
     letter-spacing: 0.1em;
     font-size: 1.75rem;
     font-weight: 600;
     vertical-align: top;
     /* border: 1px solid black; */
   }
-  .best-seller-box .best-seller-text .best-seller-text-2 {
+  .best-seller-box > .best-seller-text .best-seller-text-2 {
     font-size: 1.45rem;
     font-weight: 600;
     vertical-align: top;
     /* border: 1px solid black; */
   }
-  .best-seller-box .best-seller-text .best-seller-text-3 {
+  .best-seller-box > .best-seller-text .best-seller-text-3 {
     letter-spacing: 0.025em;
     font-size: 1.75rem;
     font-weight: 400;
@@ -1036,7 +1063,7 @@ footer .copy-right center span{
     /* border: 1px solid black; */
   }
   /* Continues to adjust the button position and size */
-  .best-seller-box .best-seller-button {
+  .best-seller-box > .best-seller-button {
     font-size: 2rem;
     display: inline-block;
     background-color: var(--red);
@@ -1048,16 +1075,10 @@ footer .copy-right center span{
     /* border: 1px solid black; */
     /* margin attribute will adjust the button */
   }
-  .best-seller-box .best-seller-button:hover {
+  .best-seller-box > .best-seller-button:hover {
     background-color: var(--light-red);
   }
   /* The End of Best Seller */
-
-  /* Testimonial Section */
-  .testimonial .testimonial-container .testimonial-slide p{
-    padding: 0.75em 3em;
-  }
-  /* The End of Testimonial Section */
 
 }
 /* The End of Best Seller */
@@ -1136,8 +1157,6 @@ footer .copy-right center span{
     display: block;
     object-fit: fill;
     border-radius: 0px 0px 0px 0px;
-    /* padding: 0.5em; */
-    /* It control the image's size */
   }
   .best-seller-box .best-seller-header,
   .best-seller-box .best-seller-text {
@@ -1157,22 +1176,14 @@ footer .copy-right center span{
     background-color: var(--red);
     color: var(--whitetext);
     text-decoration: none;
-    padding: 0.75em 0.85em;
-    margin: 0.5em 0em 0.5em 0em;
+    padding: 0.75rem 0.85rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
     border-radius: 1.45em;
-    /* border: 1px solid black; */
-    /* margin attribute will adjust the button */
   }
   .best-seller-box .best-seller-button:hover {
     background-color: var(--light-red);
   }
   /* The End of Best Seller Section For Tablet Responsive */
-
-  /* Testimonial Section For Tablet Responsive*/
-  .testimonial .testimonial-container .testimonial-slide p{
-    padding: 0.75em 1.5em;
-  }
-  /* The End of Testimonial Section For Tablet Responsive*/
 }
 
 @media screen and (max-width: 768px) {
@@ -1218,7 +1229,9 @@ footer .copy-right center span{
     /* It needs to adjust the image for responsive in */
     text-align: center;
     width: 100%;
-    /* border: 1px solid black; */
+  }
+  .brand-slide-container .slide-container .slide-content .card-wrapper .card .card-content{
+    height: auto;
   }
   .best-seller-box {
     width: 300px;
@@ -1234,9 +1247,6 @@ footer .copy-right center span{
     height: 250px;
     display: block;
     object-fit: fill;
-    border-radius: 0px 0px 0px 0px;
-    /* padding: 0.5em; */
-    /* It control the image's size */
   }
   .best-seller-box .best-seller-header,
   .best-seller-box .best-seller-text {
@@ -1249,27 +1259,18 @@ footer .copy-right center span{
   .best-seller-box .best-seller-text {
     display: none;
   }
-  /* Continues to adjust the button position and size */
   .best-seller-box .best-seller-button {
     font-size: 2rem;
     display: inline-block;
     background-color: var(--red);
     color: var(--whitetext);
     text-decoration: none;
-    padding: 0.75em 0.85em;
-    margin: 0.5em 0em 0.5em 0em;
+    padding: 0.75rem 0.85rem;
+    margin: 0.5rem 0em 0.5rem 0em;
     border-radius: 1.45em;
-    /* border: 1px solid black; */
-    /* margin attribute will adjust the button */
   }
   .best-seller-box .best-seller-button:hover {
     background-color: var(--light-red);
   }
   /* The End of Best Seller Section For Mobile Responsive */
-
-  /* Testimonial Section For Mobile Responsive*/
-  .testimonial .testimonial-container .testimonial-slide p{
-    padding: 0.75em 1.5em;
-  }
-  /* The End of Testimonial Section For Mobile Responsive*/
 }
